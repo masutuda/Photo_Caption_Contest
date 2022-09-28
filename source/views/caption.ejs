@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Caption</title>
+</head>
+<body>
+    <h1>Caption for <%= photo.name.toUpperCase() %></h1>
+    <div>
+        <br>
+        <img style="width: 65vw" src=<%= photo.address %> alt=<%= photo.name %>>
+    </div>
+    <ul>
+        <% if(typeof errors != 'undefined') { %>
+            <% errors.forEach(error => { %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        <% } %>
+    </ul>
+    <div>
+        <form action="/caption" method="POST">
+            <div class="form-group">
+                <label for="caption" class="form-label">Enter Caption: </label>
+                <input type="hidden" value="<%= photo.id %>" name="photoId" >
+                <textarea rows="3" cols="70" class="form-control" name="caption" id="caption"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome <%= user.first_name.toUpperCase() %></h1>
+    <h2>Click on an image below to add your caption</h2>
+
+
+    <% photos.forEach(photo => { %>
+        <div>
+            <br>
+            <h2><%= photo.name.toUpperCase() %></h2>
+            <a href=<%= photo.captionLink %>>
+                <img style="width: 40vw" src=<%= photo.address %> alt=<%= photo.name %>>
+            </a>
+            <% captions.forEach(caption => { %>
+                <% if(caption.photo_id == photo.id) { %>
+                    <p style="color:blue;">Submitted Caption: <%= caption.caption %></p>
+                <% } %>
+            <% }) %>
+        </div>
+
+    <% }) %>
+
+    <form action="/logout" method="POST">
+        <div class="form-group">
+            <input type="hidden">
+            <button type="submit" class="link-button">Logout</button>
+        </div>
+    </form>
+</body>
+</html>
