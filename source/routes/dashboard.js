@@ -18,7 +18,6 @@ dashboardRouter.get('', ensureAuthenticated, async (req, res) => {
     if(myCache.has('photosCache')){
         const photos = myCache.get('photosCache');
         photos.forEach(photo => photo.captionLink = "/caption?id=" + photo.id);
-        console.log('using cache')
         res.render('dashboard', {user: req.user, photos: photos, captions: captions})
     } else {
         const photos = await Photo.findAll({
@@ -28,7 +27,6 @@ dashboardRouter.get('', ensureAuthenticated, async (req, res) => {
         photos.forEach(photo => photo.captionLink = "/caption?id=" + photo.id);
     
         myCache.set('photosCache', photos);
-        console.log('not using cache')
         res.render('dashboard', {user: req.user, photos: photos, captions: captions})
     }
 });
