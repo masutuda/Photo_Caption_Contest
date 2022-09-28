@@ -15,13 +15,10 @@ initializePassport(passport);
 
 // Static Files
 app.use(express.static('public'));
-app.use('/css', express.static(__dirname + 'public/css'));
-app.use('/images', express.static(__dirname + 'public/images'));
-app.use('/js', express.static(__dirname + 'public/js'));
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 60*60*1000, httpOnly: true, secure: false, sameSite: true},
+    cookie: { maxAge: 60*60*1000, httpOnly: true, secure: true, sameSite: false},
     resave: false,
     saveUninitialized: false,
 }));

@@ -6,7 +6,7 @@
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
-  "test": {
+  "dev": {
     "username": "db_user",
     "password": "db_user123",
     "database": "photo_caption_database",
