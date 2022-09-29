@@ -6,25 +6,25 @@ module.exports = {
     return queryInterface.bulkInsert('Photos', [
     {
       name: 'Band-Maid',
-      address: 'https://drive.google.com/uc?export=view&id=1X91TlCghfYS-hxo52VudwPfZpcgUhvbw',
+      address: 'bandmaid.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Nemophila',
-      address: 'https://drive.google.com/uc?export=view&id=1F2TzP--c9SmNhrbH03RoZ8F-0T_KKaRo',
+      address: 'nemophila.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Asterism',
-      address: 'https://drive.google.com/uc?export=view&id=1eFRlMyY2haoM2U0QJjRyERFJfgZFTk1n',
+      address: 'asterism.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       name: 'Lovebites',
-      address: 'https://drive.google.com/uc?export=view&id=1HJxQkpLtUHXnOWqwzD3MSdXgqi_gtKsx',
+      address: 'lovebites.jpg',
       createdAt: new Date(),
       updatedAt: new Date()
     }
