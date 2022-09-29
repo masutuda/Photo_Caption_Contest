@@ -15,6 +15,7 @@ initializePassport(passport);
 
 // Static Files
 app.use(express.static('public'));
+app.use(express.static(__dirname + '/images'));
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
     secret: process.env.SESSION_SECRET,
