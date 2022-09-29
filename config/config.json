@@ -13,14 +13,7 @@
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
-    "production": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "photo_caption_database",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "production(Heroku)": {
+  "production": {
     "use_env_variable": "DATABASE_URL",
     "dialect": "postgres",
     "protocol": "postgres",
